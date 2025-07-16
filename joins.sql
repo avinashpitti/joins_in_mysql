@@ -63,3 +63,50 @@ select * from customers;
 
 select * from transactions;
 
+# Inner joins: it displays only the common values in both the tables.
+
+select * 
+from transactions 
+inner join customers
+on transactions.customer_id=customers.customer_id;
+
+
+select transaction_id,first_name,last_name,amount # We can also select the columns which are required only.
+from transactions 
+inner join customers
+on transactions.customer_id=customers.customer_id;
+
+
+#left join: It displays both common and all values in the left table
+
+select * 
+from transactions 
+left join customers
+on transactions.customer_id=customers.customer_id;
+
+# It displays both common and all values of right table
+
+select * 
+from transactions 
+right join customers
+on transactions.customer_id=customers.customer_id;
+
+select count(amount) from transactions;
+/*
+we can also write as select count(amount) as count of numbers from transactions
+*/
+
+select sum(amount) from transactions;
+
+select avg(amount) from transactions;
+
+select max(amount) from transactions;
+
+select min(amount) from transactions;
+
+
+
+
+
+
+
